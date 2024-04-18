@@ -22,5 +22,5 @@ with flex, make them even size well repartition
 3-2) create a loop which creates N column in each row
 4) container : display flex it and evenly distribute  the space between the element
 5) do the same which each of row which are containers the columns elements
-6) add an eventlistener for everydiv which changes background
+6) add an eventlistener for everydiv which changes background color when mouse enters
 

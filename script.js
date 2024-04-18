@@ -20,6 +20,24 @@ function createNumberOfColumns(numberOfColumns){
     }
 } 
 
+//createNumberNewDivIntoParent(16,"row", container); 
+for(var i=0; i<16; i++){
+    const newDiv = document.createElement("div"); 
+    newDiv.classList.add("row");  
+    container.appendChild(newDiv); 
+    }
 
-createNumberNewDivIntoParent(16,"row", container); 
-createNumberOfColumns(16); 
+//createNumberOfColumns(16); 
+    var rows = document.querySelectorAll("#container .row"); 
+    var rowsLength = rows.length; 
+    for(var i=0; i<rowsLength; i++){
+        //createNumberNewDivIntoParent(numberOfColumns, "column", rows[i]);
+        for(var j=0; j<16; j++){
+            const newDiv = document.createElement("div"); 
+            newDiv.classList.add("column");  
+            newDiv.addEventListener("mouseenter", function(){
+                newDiv.style.backgroundColor = "blue"; 
+            })
+            rows[i].appendChild(newDiv); 
+            }
+    }
