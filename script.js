@@ -1,15 +1,25 @@
-  
-function createNewDivInContainer(){
-    const container =document.getElementById("container");
-    var newDiv = document.createElement("div"); 
-    container.appendChild(newDiv); 
-}
+const container =document.getElementById("container");
 
-function createNumberNewDivIntoContainer(number){
+function createNumberNewDivIntoParent(number, newDivClass, parent){
     for(var i=0; i<number; i++){
-    createNewDivInContainer();  
+    const newDiv = document.createElement("div"); 
+    newDiv.classList.add(newDivClass);  
+    parent.appendChild(newDiv); 
     }
 }
 
-createNumberNewDivIntoContainer(3); 
+function createNumberRows(numberofRows){
+    createNumberNewDivIntoParent(numberofRows,"row", container); 
+}
 
+function createNumberOfColumns(numberOfColumns){
+    var rows = document.querySelectorAll("#container .row"); 
+    var rowsLength = rows.length; 
+    for(var i=0; i<rowsLength; i++){
+        createNumberNewDivIntoParent(numberOfColumns, "column", rows[i]); 
+    }
+} 
+
+
+createNumberNewDivIntoParent(16,"row", container); 
+createNumberOfColumns(16); 
