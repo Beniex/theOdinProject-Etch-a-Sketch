@@ -23,4 +23,10 @@ with flex, make them even size well repartition
 4) container : display flex it and evenly distribute  the space between the element
 5) do the same which each of row which are containers the columns elements
 6) add an eventlistener for everydiv which changes background color when mouse enters
+7) add a button 
+8) add an eventlistener to make pop up show to the user prompt the number of square he wants 
+9) delete the grid and create a new one with the number of the prompt 
+10) add a random nackground color to the div when mouseenters
+
+
 
