@@ -1,3 +1,31 @@
-body{
-    background-color: aqua;
+html{
+    height: 100%;
 }
+body{
+height: 100%;
+}
+
+
+#container{
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+
+
+}
+
+.row {
+    flex:1;
+    display: flex;
+    justify-items: auto;
+
+}
+
+.column{
+    flex: 1;
+    border: solid black 10px;
+
+}
+

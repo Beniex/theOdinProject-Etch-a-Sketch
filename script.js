@@ -16,7 +16,7 @@ function createNumberOfColumns(numberOfColumns){
     var rows = document.querySelectorAll("#container .row"); 
     var rowsLength = rows.length; 
     for(var i=0; i<rowsLength; i++){
-        createNumberNewDivIntoParent(numberOfColumns, "column", rows[i]); 
+        createNumberNewDivIntoParent(numberOfColumns, "column", rows[i]);
     }
 } 
 
