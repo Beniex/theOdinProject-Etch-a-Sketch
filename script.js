@@ -1,65 +1,32 @@
 const container =document.getElementById("container");
 
-function createNumberNewDivIntoParent(number, newDivClass, parent){
-    for(var i=0; i<number; i++){
-    const newDiv = document.createElement("div"); 
-    newDiv.classList.add(newDivClass);  
-    parent.appendChild(newDiv); 
-    }
-}
-
-function createNumberRows(numberofRows){
-    createNumberNewDivIntoParent(numberofRows,"row", container); 
-}
-
-function createNumberOfColumns(numberOfColumns){
-    var rows = document.querySelectorAll("#container .row"); 
-    var rowsLength = rows.length; 
-    for(var i=0; i<rowsLength; i++){
-        createNumberNewDivIntoParent(numberOfColumns, "column", rows[i]);
-    }
-} 
-
-var darknessCounters = []; 
-
-//createNumberNewDivIntoParent(16,"row", container); 
-function createRowsIntoContainer(number){
-for(var i=0; i<number; i++){
-    const newDiv = document.createElement("div"); 
-    newDiv.classList.add("row");  
-    container.appendChild(newDiv); 
-    darknessCounters.push([]); 
+function createRowsIntoContainer(numberOfRows){
+for(var i=0; i<numberOfRows; i++){
+    const newRow = document.createElement("div"); 
+    newRow.classList.add("row");  
+    container.appendChild(newRow); 
     }
 }
 
 
-//createNumberOfColumns(16); 
 
-
-
-function createSquaresIntoRows(number){
-
+function createSquaresIntoRows(numberOfSquarePerRow){
 var rows = document.querySelectorAll("#container .row"); 
 var rowsLength = rows.length; 
-    for(var i=0; i<rowsLength; i++){
-        //createNumberNewDivIntoParent(numberOfColumns, "column", rows[i]);
-        console.log(darknessCounters);
-        for(var j=0; j<number; j++){
-            const newDiv = document.createElement("div"); 
-            newDiv.classList.add("column"); 
-            darknessCounters[i].push(j);
-            var ilocal = i; 
-            var jlocal = j;  
-            newDiv.addEventListener("mouseenter", function(index){
-                return function (){
-                    console.log("je suis dans " + index+ "row et la " + jlocal +"colonne") ; 
-                    newDiv.style.backgroundColor = getRandomColor();
-                }
-            }(i)); 
-            rows[i].appendChild(newDiv); 
-            }; 
+    for(var row=0; row<rowsLength; row++){
+        for(var square=0; square<numberOfSquarePerRow; square++){
+
+            const newSquare = document.createElement("div"); 
+            newSquare.classList.add("column"); 
+
+            newSquare.addEventListener("mouseenter", function(){
+                newSquare.style.backgroundColor = getRandomColor();
+            }); 
+            rows[row].appendChild(newSquare); 
+        }; 
     }; 
 }
+
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
@@ -73,16 +40,12 @@ var button = document.querySelector("button");
 button.addEventListener("click", function(){
     let squarePerSide = prompt("how many square per side do you want?"); 
     while (container.firstChild) {
-        container.removeChild(container.firstChild);
+            container.removeChild(container.firstChild);
     }
     createRowsIntoContainer(squarePerSide); 
     createSquaresIntoRows(squarePerSide); 
-    darknessCounters=[]; 
-    console.log(darknessCounters); 
-    })
+})
 
-
-createRowsIntoContainer(16); 
-createSquaresIntoRows(16); 
-console.log(darknessCounters[12][12]); 
+createRowsIntoContainer(12); 
+createSquaresIntoRows(12);  
 

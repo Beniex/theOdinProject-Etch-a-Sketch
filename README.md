@@ -27,6 +27,12 @@ with flex, make them even size well repartition
 8) add an eventlistener to make pop up show to the user prompt the number of square he wants 
 9) delete the grid and create a new one with the number of the prompt 
 10) add a random nackground color to the div when mouseenters
+11) add a darkening effect 
+11-1) create a counter for how many times the mouse enters
+11-1-1)when a div(row or square/colum) an array to store the count of darkness is created as well
+11-1-2) the eventlistener mousenters access and ctualize the counter in the array
+11-2) the counter is linked to the opacity value
+11-3) has to be between 0and 1 and augment 10% everytime
 
 
 
